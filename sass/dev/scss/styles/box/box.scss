@@ -1,0 +1,169 @@
+@import "box-variables.scss";
+@import "themes-variations.scss";
+@import "box-themes.scss";
+
+
+.tweetdis_box {
+    margin: 30px auto;
+    outline: none;
+    @include transition(all 0.2s ease-out);
+    
+    &:hover,
+    &:focus {
+        outline: none;
+    }
+    
+    &.tweetdis_left {
+        margin-right: 15px;
+    }
+ 
+    &.tweetdis_right {
+        margin-left: 15px;
+    }
+    
+    &.tweetdis_none {
+        float: none;
+        width: auto;
+    }
+    
+    &.double_margin {
+        margin: 50px auto;
+    }
+   
+    a.tweetdis_box_link {
+        text-decoration: none!important;
+        width: 100%;
+        box-sizing: border-box;
+        display: block;
+        border: none;
+        
+        &:hover {
+            text-decoration: none!important;
+        }
+        
+        p {
+            overflow: hidden;
+            padding-bottom: 5px;
+            margin: 0!important;
+            position: relative;
+            line-height: 1.25;
+            color: #333333;
+            
+            span.tweetdis_wrapper {
+                font-size: inherit;
+                
+                i {
+                    display: none;
+                }
+            }
+        }
+        
+        .tweetdis_img {
+            float: left;
+            text-align: center;
+            padding: 5% 2.5% 5% 5%;  
+            
+            img {
+                width: 100px;
+                height: 100px;
+                @include border-radius(50px);
+            }
+            
+        }
+  
+        .tweetdis_author {
+            float: left;  
+            font-size: 17px;
+            color: #9f9f9f;
+        }
+        
+        .tweetdis_click_to_tweet {
+            display: block;
+            font: 14px 'Open Sans', Verdana, sans-serif;
+            
+            i {
+                display: inline-block;
+                width: 16px;
+                height: 14px;
+                background: url('../assets/images/sprite-twitter.png') no-repeat;
+                margin-right: 3px;
+                position: relative;
+                top: 2px;
+            }
+        }
+        
+        /* Themes */
+        @include theme1();
+        @include theme2();
+        @include theme3();
+        @include theme4();
+        @include theme5();
+        @include theme6();
+        @include theme7();
+        @include theme8();
+        @include theme9(); 
+        @include theme10();
+        @include theme11();
+        @include theme12(); 
+        @include theme13();
+        @include theme14(); 
+        @include theme15();
+        @include theme16();
+    }
+
+}
+
+@media (max-width: 1200px) {
+    
+    .tweetdis_box {
+        &.tweetdis_left,
+        &.tweetdis_right {
+            width: 70%!important;
+            
+            a.tweetdis_box_link {
+                
+                .tweetdis_img {
+                    float: none;
+                }
+                
+                &.tweetdis_box_13_at {
+                    &:before,
+                    &:after {
+                        border: none;
+                    }
+                }
+            }
+        }
+    }  
+}
+
+@media (max-width: 500px) {
+    
+    .tweetdis_box {
+        
+        &.tweetdis_left,
+        &.tweetdis_right {
+            float: none;
+            width: 100%!important;
+            margin-left: 0;
+            margin-right: 0;
+        }
+        
+        a.tweetdis_box_link {
+            
+            p {
+                line-height: 1.1!important;
+            }
+            
+            .tweetdis_img {
+                float: none;
+            }
+            
+            @include reduce-font-size($base_font_sizes, 0.65);
+            @include reduce-box-mobile();
+            
+        }
+        
+    }
+
+}

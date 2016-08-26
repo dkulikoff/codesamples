@@ -1,0 +1,274 @@
+/* Settings page style */
+
+.tweetdis_settings {
+    
+    font-size: 15px;
+    @include transition(all 0.2s ease-out);
+    
+    .tweetdis_tabs {
+        input[type="radio"] {
+            display: none;
+            
+            &:checked + label {
+                color: $color-selected-tab;
+            }
+            
+            &:checked + label:after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                left: 0;
+                bottom: -1px;
+                background-color: $color-background;
+            }
+            
+        }
+        
+        label {
+            font-family: "Open Sans", Helvetica, sans-serif;
+            font-weight: 600;
+            line-height: 22px;
+            color: $color-tabs;
+            display: inline-block;
+            padding: 11px 20px;
+            border: 1px solid $color-border;
+            border-bottom: none;
+            position: relative;
+            
+            &:first-of-type {
+                margin-left: 2%;
+            }
+        }
+    }
+    
+    
+    .tweetdis_settings_wrap {
+        margin-bottom: 30px;
+        border-top: 1px solid $color-border;
+        padding: 10px 25px 20px;
+        
+        .tweetdis_left {
+            width: 48%;
+            max-width: 600px;
+        }
+        
+        & > div:nth-of-type(2) {
+            margin-left: 25px;
+        }
+        
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+        
+        p {
+            font-size: 14px;
+            text-align: justify;
+            color: $color-settings-text;
+        }
+        
+        .box_preview {
+            border: 1px solid $color-border;
+            padding: 20px;
+            
+            &.tweet {
+                border: none;
+            }
+        }
+        
+        .box_example {
+            border: 3px solid $color-border;
+            padding: 20px;
+            max-width: 390px;
+           
+            p {
+                color: $color-black;
+            }
+            
+            img {
+                display: block;
+                max-width: 100%;
+            }
+            
+            .tweetdis_left {
+                width: 50%;
+                
+                img {
+                    width: 42px;
+                    height: 42px;
+                    float: left;
+                    margin-right: 5px;
+                }
+                
+                p {
+                    margin: 0!important;
+                    line-height: 21px;
+                }
+                
+                span {
+                    color: $color-settings-text;
+                    font-size: 12px;
+                    line-height: 21px;
+                }
+            }
+            
+            .tweetdis_right {
+                text-align: right;
+                width: 50%;
+            }
+            
+            #box_example_text {
+                margin: 10px 0;
+                
+                a {
+                    color: $color-warning;
+                }
+                
+                i {
+                    font-style: normal;
+                    
+                    span {
+                        color: $color-warning;
+                    }
+                }
+            }
+        }
+        
+        .form_settings {
+            
+            $controls-height: 32px;
+            
+            label {
+                line-height: $controls-height;
+            }
+            .select {
+                height: $controls-height;
+            }
+            
+            input[type='text'],
+            input[type='password'] {
+                height: $controls-height;
+                color: $color-settings-text;
+                border: 1px solid $color-border;
+                @include box-shadow(inset 0px 1px 1px 0px rgba(0, 0, 0, 0.2));
+            }
+            
+            input[type='checkbox'] {
+                margin: 0 5px 0 0;
+                
+                & + label {
+                    float: none;
+                    width: 100%;
+                }
+                
+            }
+            
+            .input_comment {
+                font-size: 12px;
+                margin: 2px 0 0 0;
+                
+                &.saved {
+                    text-align: right;
+                    color: $color-background-button;
+                    font-size: 17px;
+                    font-weight: 600;
+                    margin-top: 10px;
+                }
+            }
+            
+            span.color_select {
+                display: inline-block;
+                height: 27px;
+                width: 27px;
+                border: 1px solid $color-border;
+                cursor: pointer;
+                margin-left: 15px;
+                
+                &.selected {
+                    @include box-shadow(0 0 0 3px $color-border);
+                }
+                
+                @for $i from 1 through length($color-hint-background) {
+                    &.color_#{$i} {
+                        background-color: nth($color-hint-background, $i);
+                    }
+                }
+            }
+            
+            .bitly {
+                
+                input[type='text'] {
+                    float: left;
+                    width: 49%;
+                }
+                
+                input[type='password'] {
+                    float: right;
+                    width: 49%;
+                }
+            }
+            
+            #bitly_status {
+                margin: 0;
+            }
+        }
+        
+        .tweetdis_button {          
+            background-color: $color-background-button;
+            border: 1px solid #2874a8;
+            @include border-radius (5px);
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+        }
+        
+        #tweetdis_picbutton {
+            float: right;
+            font-size: 13px;
+            margin: 5px 0;
+            padding: 2px 8px;
+        }
+        
+        #save_settings {
+            font-size: 17px;
+            padding: 8px 15px;
+        }
+        
+        #bitly_connect {
+            float: right;
+            padding: 3px 15px;
+            margin: 5px 0;
+        }
+        
+        .tweetdis_shortcode {
+            display: inline-block;
+            border: 1px solid $color-border;
+            padding: 10px;
+            
+            span {
+                color: $color-warning;
+            }
+        }
+    }
+    
+}
+
+@media (max-width: 1050px) {
+    
+    .tweetdis_settings {
+        
+        .tweetdis_settings_wrap  {
+        
+            & > .tweetdis_left {
+                width: 100%;
+                float: none;
+            }
+            
+            & > div:nth-of-type(2) {
+                margin-left: 0;
+            }
+        }
+    }
+}

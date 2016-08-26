@@ -1,0 +1,83 @@
+$color-hint-background: (rgba(132, 255, 255, 0.5), rgba(238, 255, 65, 0.5), rgba(238, 238, 238, 0.5));
+$color-hint-background-hover: (#84ffff, #eeff41, #eeeeee);
+
+$color-underline-hover: #00b6e6;
+$color-highlight-hover: #ffff00;
+
+
+.tweetdis_hint {
+    display: inline;
+    
+    a {
+        display: inline;
+        margin: 0;
+        cursor: pointer;
+        text-decoration: none;
+        line-height: inherit;
+        @include transition(all 0.2s ease-out);
+        cursor: pointer;
+        
+        &:hover {
+            color: inherit;
+        }
+        
+        &.type_background {
+            line-height: 1.8;
+            border-radius: 3px;
+            border: 1px solid #e7e7e7;
+        
+            @for $i from 1 through length($color-hint-background) {
+                &.color_#{$i} {
+                    background-color: nth($color-hint-background, $i);
+                }
+            }
+     
+        }
+        
+        &.type_underline {
+            text-decoration: underline;
+            background: none;
+            border: none;
+        }
+        
+        .tweetdis_hint_content {
+            &:before,
+            &:after {
+                display: inline;
+            }
+        }
+        
+        .tweetdis_hint_icon {
+            display: inline-block;
+            width: 16px;
+            height: 14px;
+            background: url('../assets/images/sprite-twitter.png') no-repeat;
+            background-position: 0px -299px;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+    }
+    
+    &:hover a {
+
+        &.type_background {
+
+            @for $i from 1 through length($color-hint-background-hover) {
+                &.color_#{$i} {
+                    background-color: nth($color-hint-background-hover, $i);
+                }
+            }
+
+        }
+        
+        &.type_underline {
+            color: $color-underline-hover;
+        }
+        
+        &.type_highlight {
+            background-color: $color-highlight-hover;
+        }
+        
+    }
+    
+}

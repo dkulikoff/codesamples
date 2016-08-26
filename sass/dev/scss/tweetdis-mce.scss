@@ -1,0 +1,159 @@
+@import "styles/functions.scss";
+
+$modal-height: 410px;
+$modal-width: 400px;
+$gap: 15px;
+
+/* Modal */
+
+.tweetdis_modal_fade {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 21000;
+    background-color: #000;
+    opacity: 0.5;
+}
+
+
+.tweetdis_modal {
+    position: fixed;
+    top: 25px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100100;
+    margin: 0 auto;
+    height: $modal-height;
+    max-width: $modal-width;
+    width: 100%;
+    @include box-shadow (0 0 30px 0 rgba(0,0,0,0.6));
+    background-color: #fff;
+    border-radius: 5px;
+    color: #454545;
+    font-size: 20px;
+    line-height: 20px;
+    
+    
+    .tweetdis_modal_header {
+        padding: $gap;
+        border-bottom: 2px solid #e5e5e5;
+        font-weight: 600;
+        text-align: center;
+    }
+    
+    
+    .tweetdis_modal_content {
+        padding: $gap $gap 0;
+        
+        .tweetdis_modal_group {
+            margin: $gap 0;
+        }
+        
+        .tweetdis_modal_link {
+            width: 100%;
+            text-align: right;
+            box-sizing: border-box;
+            padding-right: 7px;
+            color: #0073aa;
+            text-decoration: underline;
+        }
+        
+        label {
+            display: inline-block;
+            width: 40%;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .hidden_text_textarea,
+        .custom_text_textarea {
+            
+            label {
+                vertical-align: top;
+            }
+            
+        }
+        
+        select,
+        input[type="text"],
+        textarea {
+            display: inline-block;
+            width: 58%;
+            font-size: 14px;
+            line-height: 16px;
+            font-weight: 600;
+            color: #8a8a8a!important;
+            padding: 2px;
+            border-width: 1px;
+            margin-right: 1px;
+        }
+        
+        textarea {
+            height: 80px;
+            min-height: 60px;
+        }
+        
+        .hidden_text_textarea,
+        .custom_text_textarea,
+        .width_select,
+        .url_input,
+        .authority_template_options {
+            display: none;
+        }
+        
+    }
+    
+    
+    .tweetdis_modal_footer {
+        padding: $gap;
+        text-align: right;
+        
+        a {
+            display: inline-block;
+            margin-left: 20px;
+            margin-bottom: 0;
+            cursor: pointer;
+            
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            @include user-select(none);
+            
+            background-image: none;
+            border: 1px solid transparent;
+            padding: 5px 10px;
+            font-size: 15px;
+            font-weight: bold;
+            line-height: 1.5;
+            border-radius: 3px;
+            
+            &.tweetdis_modal_cancel {
+                background-color: #fff;
+                color: #8a8a8a;
+                border-color: #ccc;
+                
+                &:hover {
+                    color: #8a8a8a;
+                    background-color: #e6e6e6;
+                    border-color: #adadad;
+                }
+            }
+            
+            &.tweetdis_modal_confirm {
+                color: #fff;
+                background-color: #337ab7;
+                border-color: #2e6da4;
+                
+                &:hover {
+                    color: #fff;
+                    background-color: #286090;
+                    border-color: #204d74;
+                }
+            }
+        }
+        
+    }
+
+}

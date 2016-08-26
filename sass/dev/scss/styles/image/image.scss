@@ -1,0 +1,146 @@
+@import "image-themes.scss";
+
+/* Twitter button colors: text, background, background-hover */
+$button-standard : (white, rgb(27, 149, 224), #0c7abf);
+
+.tweetdis_clearfix.aligncenter {
+    text-align: center;
+}
+
+.tweetdis_clearfix.alignleft {
+    text-align: left;
+}
+
+.tweetdis_clearfix.alignright {
+    text-align: right;
+}
+
+.tweetdis_image {
+    
+    margin: 20px 0;
+    max-width: 100%;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    line-height: 0.8;
+    
+    .tweetdis_img_container {
+        position: relative;
+    }
+    
+    &.tweetdis_hover_light:hover .tweetdis_img_container {
+        opacity: 0.3;
+        @include transition(all 0.2s ease-out);
+    }
+    
+    &.tweetdis_hover_dark .tweetdis_img_container {
+   
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            @include opacity(0);
+        }
+        
+        &:hover:before {
+            @include opacity(0.4);
+            @include transition(all 0.2s ease-out);
+        }
+        
+    }
+    
+    &.tweetdis_hover_pattern .tweetdis_img_container {
+   
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: url('../assets/images/pattern.png');
+            @include opacity(0);
+        }
+        
+        &:hover:before {
+            @include opacity(0.7);
+            @include transition(all 0.2s ease-out);
+        }
+        
+    }
+    
+    .tweetdis_click_to_tweet {
+        
+        a.tweetdis_image_link {
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+        }
+        
+        &.twitter_standard {
+            
+            a.tweetdis_image_link {
+                height: 20px;
+                padding: 1px 8px 1px 6px;
+                background-color: nth($button-standard, 2);
+                @include border-radius(3px);
+                                            
+                &:hover {
+                    background-color: nth($button-standard, 3);
+                }
+                
+                span {
+                    margin-left: 6px;
+                    font: 11px/18px "Helvetica Neue", Arial, sans-serif;
+                    font-weight: 500;
+                    color: nth($button-standard, 1);
+                    vertical-align: top;
+                }   
+            }
+            
+            i {
+                display: inline-block;
+                background: url('../assets/images/sprite-twitter.png') no-repeat;
+                background-position: 0 -383px;
+                width: 14px;
+                height: 10.5px;
+                position: relative;
+                top: 3px;
+                vertical-align: top;
+            }
+            
+            &.twitter_large {
+                @include border-radius(4px);
+                
+                a.tweetdis_image_link {
+                    height: 28px;
+                    padding: 1px 10px 1px 9px;
+                           
+                    span {
+                        margin-left: 8px;
+                        font: 13px/26px "Helvetica Neue", Arial, sans-serif;
+                    } 
+                }
+                
+                i {
+                    background: url('../assets/images/sprite-twitter.png') no-repeat;
+                    background-position: 0 -486px;
+                    width: 16px;
+                    height: 14px;
+                    top: 5px;
+                }
+            }
+        }
+    }
+        
+}

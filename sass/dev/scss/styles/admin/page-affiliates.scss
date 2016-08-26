@@ -1,0 +1,179 @@
+/* Affiliates page style */
+
+.tweetdis_affiliates {
+        
+    h2 {
+        margin: 30px 0;
+        font-size: 26px;
+    }
+    
+    h3 {
+        font-size: 20px;
+        font-weight: 400;
+        color: #353535;
+
+        &.affiliates_fadeout {
+            font-size: 23px;
+            color:#898989;
+            font-weight: 300;
+        }
+    }
+        
+    .tweetdis_left {
+        width: 50%;
+    }
+
+    .tweetdis_right {
+        margin-right: 30px;
+        text-align: center;
+    }
+    
+    .tweetdis_page_wrap {
+        padding: 20px 40px;
+    }
+
+    p {
+        font-size: 16px;
+        margin: 20px 0;
+    }
+
+    span {
+        color: red;
+    }
+
+    .affiliate_link {
+        display: inline-block;
+        position: relative;
+        padding: 10px 20px;
+        background-color: #f6f6f6;
+        @include border-radius(8px);
+
+        .affiliate_link_top_line {
+            position: absolute;
+            top: -30%;
+            left: 1.5%;
+            height: 75px;
+            width: 96%;
+            background: url('../assets/images/top_line.png') no-repeat;
+            background-size: 100% 100%;
+        }
+
+        .affiliate_link_bottom_line {
+            position: absolute;
+            top: 65%;
+            left: 77.5%;
+            height: 75px;
+            width: 20%;
+            background: url('../assets/images/bottom_line.png') no-repeat;
+            background-size: 100% 100%;
+        }
+
+        h3 {
+            font-size: 36px;
+            line-height: 38px;
+            color:#007EAE;
+            white-space: nowrap;
+        }
+
+        & + p {
+            margin-top: 10px;
+        }
+    }
+
+    ul {
+        list-style-type: disc;
+        color: #007EAE;
+        padding-left: 15px;
+
+        a {
+            font-size: 16px;
+        }
+    }
+
+    .affiliates_cupg {
+
+        max-width: 308px;
+        height: 208px;
+        margin: 30px auto;
+        border: 10px solid transparent;
+        border-image: url('../assets/images/cupg_border.png') 10;
+        -webkit-border-image: url('../assets/images/cupg_border.png') 10;
+        -o-border-image: url('../assets/images/cupg_border.png') 10;
+        border-image-outset: 20px;
+
+        img {
+            max-width: 100%;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        strong {
+            font-weight: 700; 
+        }
+
+        a {
+            display: block;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+            background-color: #FF8200;
+            @include border-radius(10px);
+            border-bottom: 7px solid #db7000;
+            color: white;
+            padding: 12px 30px;
+        }
+
+    }
+    
+}
+
+
+@media (max-width: 1050px) {
+    
+    .tweetdis_affiliates {
+        
+        .tweetdis_left,
+        .tweetdis_right {
+            float: none;
+        }
+        
+        .tweetdis_left {
+            width: 100%;
+        }
+        
+        .tweetdis_right {
+            margin-right: 0;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .tweetdis_affiliates .affiliate_link h3 {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 570px) {
+    .tweetdis_affiliates .affiliate_link {
+                
+        h3 {
+            font-size: 18px;
+            white-space: normal;
+            word-break: break-all;
+        }
+        
+        .affiliate_link_top_line,
+        .affiliate_link_bottom_line {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .tweetdis_affiliates .affiliates_cupg a{
+        padding: 5px;
+        font-size: 16px;
+    }
+}

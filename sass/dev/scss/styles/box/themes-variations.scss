@@ -1,0 +1,236 @@
+@mixin fonts-variation ($base) {
+                
+    &.tweetdis_font_bigger {
+        font-size: $base * 1.14;
+    }
+
+    &.tweetdis_font_smaller {
+        font-size: $base * 0.86;
+    }
+    
+}
+
+@mixin reduce-box-mobile () {
+    
+    &.tweetdis_box_01,
+    &.tweetdis_box_02,
+    &.tweetdis_box_03,
+    &.tweetdis_box_04 {
+        padding: 10px;
+    }
+
+    &.tweetdis_box_05 p {
+        padding-left: 10px;
+        padding-right: 25px;
+    }
+
+    &.tweetdis_box_06 {
+        p {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .tweetdis_click_to_tweet {
+            margin-left: 10px;
+        }
+    } 
+
+    &.tweetdis_box_09 {
+        p {
+            padding: 0 30px;
+        }  
+
+        .tweetdis_click_to_tweet {
+            margin: 0 30px;
+        }
+    }
+
+    &.tweetdis_box_13_at {
+        &:before,
+        &:after {
+            border: none;
+        }
+    }
+    
+}
+
+
+/* Theme 01 variations */
+
+@mixin color-schemes1 ($settings) {
+    
+    @for $i from 1 through length($settings) {
+        
+        $scheme_settings : nth($settings, $i);
+
+        &.tweetdis_color_#{$i} {
+            border: nth($scheme_settings, 3);
+
+            .tweetdis_click_to_tweet {
+                color: nth($scheme_settings, 5);
+
+                i {
+                    background-position: 0 nth($scheme_settings, 1);
+                }
+            }
+
+            &:hover {
+                border: nth($scheme_settings, 4);
+
+                .tweetdis_click_to_tweet {
+                    color: nth($scheme_settings, 6);
+
+                    i {
+                        background-position: 0 nth($scheme_settings, 2);
+                    }
+                }
+            }
+        }
+    } 
+}
+
+
+/* Theme 02, 03 variations */
+
+@mixin color-schemes2 ($settings) {
+    
+    @for $i from 1 through length($settings) {
+        
+        $scheme_settings : nth($settings, $i);
+
+        &.tweetdis_color_#{$i} {
+            background-color: nth($scheme_settings, 3);
+            
+            p {
+                color: nth($scheme_settings, 5);
+            }
+
+            .tweetdis_click_to_tweet {
+                color: nth($scheme_settings, 7);
+
+                i {
+                    background-position: 0 nth($scheme_settings, 1);
+                }
+            }
+
+            &:hover {
+                background-color: nth($scheme_settings, 4);
+
+                p {
+                    color: nth($scheme_settings, 6);
+                }
+
+                .tweetdis_click_to_tweet {
+                    color: nth($scheme_settings, 8);
+
+                    i {
+                        background-position: 0 nth($scheme_settings, 2);
+                    }
+                }
+            }
+        }
+    } 
+}
+
+
+/* Theme 04 variations */
+
+@mixin color-schemes3 ($settings) {
+    
+    @for $i from 1 through length($settings) {
+        
+        $scheme_settings : nth($settings, $i);
+
+        &.tweetdis_color_#{$i} {
+            border: nth($scheme_settings, 5);
+            
+            p {
+                color: nth($scheme_settings, 7);
+            }
+
+            .tweetdis_click_to_tweet {
+                background-color: nth($scheme_settings, 3);
+                color: nth($scheme_settings, 9);
+
+                i {
+                    background-position: 0 nth($scheme_settings, 1);
+                }
+            }
+
+            &:hover {
+                border: nth($scheme_settings, 6);
+
+                p {
+                    color: nth($scheme_settings, 8);
+                }
+
+                .tweetdis_click_to_tweet {
+                    background-color: nth($scheme_settings, 4);
+                    color: nth($scheme_settings, 10);
+
+                    i {
+                        background-position: 0 nth($scheme_settings, 2);
+                    }
+                }
+            }
+        }
+    } 
+}
+
+
+/* Theme 05 variations */
+
+@mixin color-schemes4 ($settings) {
+    
+    @for $i from 1 through length($settings) {
+
+        $scheme_settings : nth($settings, $i);
+
+        &.tweetdis_color_#{$i} {
+            p {
+                background-color: nth($scheme_settings, 5);
+                color: nth($scheme_settings, 7);
+            }
+            
+            .tweetdis_click_to_tweet {
+                background-color: nth($scheme_settings, 10);
+                
+                &:before {
+                    border: 8px solid transparent;
+                    border-top: 8px solid nth($scheme_settings, 3);
+                    border-right: 8px solid nth($scheme_settings, 3);
+                }
+                
+                i {
+                    background-position: 0 nth($scheme_settings, 1);
+                }
+            }
+            
+            &:hover {
+                
+                p {
+                    background-color: nth($scheme_settings, 6);
+                    color: nth($scheme_settings, 8);
+                    
+                    &:before {
+                        @include opacity(nth($scheme_settings, 9));
+                    }
+                }
+                
+                .tweetdis_click_to_tweet {
+                    background-color: nth($scheme_settings, 11);
+                    
+                    &:before {
+                        border-top: 8px solid nth($scheme_settings, 4);
+                        border-right: 8px solid nth($scheme_settings, 4);
+                    }
+                    
+                    i {
+                        background-position: 0 nth($scheme_settings, 2);
+                    }
+                }
+            }
+        }
+    }
+    
+}

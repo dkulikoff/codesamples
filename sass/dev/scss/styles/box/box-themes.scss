@@ -1,0 +1,941 @@
+/* Box themes */
+
+@mixin theme1 () {
+    $theme : 1;
+    
+    $box : $theme;
+    @if ($theme < 10) {
+        $box : 0#{$box};
+    }
+    @if ($theme >= 12) {
+        $box : #{$box}_at;
+    }
+    
+    &.tweetdis_box_#{$box} {
+        padding: 33px 40px 19px;
+        
+        p {
+            font: nth($base_font_sizes, $theme) 'Montserrat', Arial, sans-serif;
+            color: #333333;
+            @include fonts-variation(nth($base_font_sizes, $theme));
+        }
+        
+        .tweetdis_click_to_tweet {
+            float: right;
+            padding-top: 12px;
+            font-family: 'Montserrat', Arial, sans-serif;
+            
+            i{
+                top: 0;
+            }
+        }
+        
+        @include color-schemes1($box_01_settings);
+    }
+}
+
+
+@mixin theme2 () {
+    $theme : 2;
+    
+    $box : $theme;
+    @if ($theme < 10) {
+        $box : 0#{$box};
+    }
+    @if ($theme >= 12) {
+        $box : #{$box}_at;
+    }
+    
+    &.tweetdis_box_#{$box} {
+        @include box-shadow(0px 0px 30px 0px rgba(0, 0, 0, 0.1));
+        padding: 37px;
+
+        &:hover {
+            @include box-shadow(0px 0px 30px 0px rgba(0, 0, 0, 0.2));
+        }
+        
+        p {
+            font: nth($base_font_sizes, $theme) 'PT Serif', 'Times New Roman', serif;
+            @include fonts-variation(nth($base_font_sizes, $theme));
+        }
+        
+        .tweetdis_click_to_tweet {
+            border-top: 1px solid #e5e5e5;
+            margin-top: 29px;
+            padding-top: 13px;
+        }
+        
+        &.tweetdis_color_1 {
+            .tweetdis_click_to_tweet {
+                @include opacity(0.7);
+            }
+        }
+        
+        @include color-schemes2($box_02_settings);
+    }
+}
+
+
+@mixin theme3 () {
+    $theme : 3;
+    
+    $box : $theme;
+    @if ($theme < 10) {
+        $box : 0#{$box};
+    }
+    @if ($theme >= 12) {
+        $box : #{$box}_at;
+    }
+    
+    &.tweetdis_box_#{$box} {
+        padding: 29px;
+        
+        p {
+            font: nth($base_font_sizes, $theme) 'Open Sans', Verdana, sans-serif;
+            padding: 10px;
+            @include fonts-variation(nth($base_font_sizes, $theme));
+        }
+        
+        .tweetdis_click_to_tweet {
+            float: right;
+            padding-top: 12px;
+        }
+        
+        @include color-schemes2($box_03_settings);
+    }
+}
+
+
+@mixin theme4 () {
+    $theme : 4;
+    
+    $box : $theme;
+    @if ($theme < 10) {
+        $box : 0#{$box};
+    }
+    @if ($theme >= 12) {
+        $box : #{$box}_at;
+    }
+    
+    &.tweetdis_box_#{$box} {    
+        padding: 37px 25px;
+        background-color: #ffffff;
+        text-align: center;
+        
+        p {
+            font: nth($base_font_sizes, $theme) 'Mate', Georgia, serif;
+            text-align: center;
+            @include fonts-variation(nth($base_font_sizes, $theme));
+        }
+            
+        &:hover p {
+            text-decoration: underline;
+        }
+        
+        .tweetdis_click_to_tweet {
+            @include border-radius(5px);
+            display: inline-block;
+            font: 12px 'Roboto', Verdana, sans-serif;
+            line-height: 22px;
+            padding: 6px 19px;
+            margin-top: 30px;
+            
+            i {
+                margin-right: 7px;
+            }
+        }
+        
+        @include color-schemes3($box_04_settings);
+    }
+}
+
+
+@mixin theme5 () {
+    $theme : 5;
+    
+    $box : $theme;
+    @if ($theme < 10) {
+        $box : 0#{$box};
+    }
+    @if ($theme >= 12) {
+        $box : #{$box}_at;
+    }
+    
+    &.tweetdis_box_#{$box} {    
+        @include box-shadow(4px 4px 0px 0px #ebebeb);
+        text-align: right;
+        
+        p {
+            font: nth($base_font_sizes, $theme) 'Roboto', Verdana, sans-serif;
+            font-weight: 300;
+            line-height: 1.5;
+            padding: 37px 115px 30px 29px;
+            z-index: 1;
+            text-align: left;
+            @include fonts-variation(nth($base_font_sizes, $theme));
+            
+            &:before {
+                content: '';
+                @include opacity(0.16);
+                width: 219px;
+                height: 178px;
+                position: absolute;
+                right: 0px;
+                top: 20px;
+                background: url('../assets/images/box_05_bg.png') no-repeat top center;
+                z-index: -1;
+            }
+        }
+            
+        &:hover p {
+            text-decoration: underline;
+        }
+        
+        .tweetdis_click_to_tweet {
+            padding: 8px 10px 10px 0px;
+            font: 12px 'Roboto', Verdana, sans-serif;
+            font-weight: 300;
+            line-height: 20px;
+            position: relative;
+            color: white;
+            
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0px;
+                bottom: -16px;
+            }
+        }
+        
+        @include color-schemes4($box_05_settings);
+    }
+}
+
+
+@mixin theme6 () {
+    $theme : 6;
+    
+    $box : $theme;
+    @if ($theme < 10) {
+        $box : 0#{$box};
+    }
+    @if ($theme >= 12) {
+        $box : #{$box}_at;
+    }
+    
+    &.tweetdis_box_#{$box} {    
+        background: #f5f5f5;
+        border-left: 5px solid #bfbfbf;
+        
+        &:hover {
+            border-left: 5px solid #2aa9e0;
+            
+            .tweetdis_click_to_tweet {
+                color: #2aa9e0;
+                
+                i {
+                    background-position: 0 -151px;
+                }
+            }
+        }
+        
+        p {
+            font: nth($base_font_sizes, $theme) 'Open Sans', Verdana, sans-serif;
+            font-weight: bold;
+            line-height: 1.2;
+            padding: 34px 36px 20px 36px;
+            @include fonts-variation(nth($base_font_sizes, $theme));
+        }
+        
+        .tweetdis_click_to_tweet {
+            font: 13px 'Open Sans', Verdana, sans-serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #bfbfbf;
+            margin-left: 29px;
+            padding: 20px 0px 30px 0px;
+            border-top: 1px solid #dadada;
+            
+            i {
+                background-position: 0 -171px;
+                width: 25px;
+                height: 20px;
+            }
+        }
+    }
+}
+
+
+@mixin theme7 () {
+    $theme : 7;
+    
+    $box : $theme;
+    @if ($theme < 10) {
+        $box : 0#{$box};
+    }
+    @if ($theme >= 12) {
+        $box : #{$box}_at;
+    }
+    
+    &.tweetdis_box_#{$box} {    
+        
+        &:hover {
+            p,
+            .tweetdis_click_to_tweet {
+                color: #2aa9e0;
+            }
+            
+            p:before {
+                background-color: #2aa9e0;
+            }
+        }
+        
+        p {
+            font: nth($base_font_sizes, $theme) 'Lato', Arial, sans-serif;
+            line-height: 1.2;
+            padding: 5% 5% 0 5%;
+            position: relative;
+            @include fonts-variation(nth($base_font_sizes, $theme));
+            
+            &:before {
+                content: '';
+                position: absolute;
+                left: 5%;
+                top: 0px;
+                width: 60px;
+                height: 5px;
+                background-color: #bfbfbf;
+            }
+        }
+        
+        .tweetdis_click_to_tweet {
+            font: 16px 'Lato', Arial, sans-serif;
+            color: #bfbfbf;
+            margin: 0px 5%;
+            padding: 22px 0px 10px 0px;
+            
+            i {
+                background-position: 0 -151px;
+                width: 25px;
+                height: 20px;
+            }
+        }
+    }
+}
+
+
+@mixin theme8 () {
+    $theme : 8;
+    
+    $box : $theme;
+    @if ($theme < 10) {
+        $box : 0#{$box};
+    }
+    @if ($theme >= 12) {
+        $box : #{$box}_at;
+    }
+    
+    &.tweetdis_box_#{$box} {    
+        text-align: center;
+        
+        &:hover {
+            .tweetdis_click_to_tweet {
+                color: #eb7260;
+                border: 1px solid #eb7260;
+                
+                i {
+                    background-position: 0 -472px;
+                }
+            }
+        }
+        
+        p {
+            font: nth($base_font_sizes, $theme) 'Playfair Display', Georgia, serif;
+            font-style: italic;
+            line-height: 1.2;
+            padding: 40px 5% 0;
+            position: relative;
+            text-align: center;
+            @include fonts-variation(nth($base_font_sizes, $theme));
+            
+            &:before {
+                content: '';
+                position: absolute;
+                left: 50%;
+                top: 0px;
+                width: 60px;
+                height: 16px;
+                margin-left: -30px;
+                background: url('../assets/images/sprite-twitter.png') no-repeat;
+                background-position: 0 -44px;
+            }
+        }
+        
+        .tweetdis_click_to_tweet {
+            display: inline-block;
+            font: 16px 'Playfair Display', Georgia, serif;
+            color: #00b6e6;
+            margin-top: 27px;
+            padding: 9px 21px;
+            border: 1px solid #00b6e6;
+            border-radius: 20px;
+            
+            i {
+                margin-right: 10px;
+                background-position: 0 -299px;
+            }
+        }
+    }
+}
+
+
+@mixin theme9 () {
+    $theme : 9;
+    
+    $box : $theme;
+    @if ($theme < 10) {
+        $box : 0#{$box};
+    }
+    @if ($theme >= 12) {
+        $box : #{$box}_at;
+    }
+    
+    &.tweetdis_box_#{$box} {    
+        
+        &:hover {
+            p {
+               color: #2aa9e0;
+            }
+        }
+        
+        p {
+            font: nth($base_font_sizes, $theme) 'Lato', Arial, sans-serif;
+            font-weight: 900;
+            line-height: 1.2;
+            padding: 0 45px;
+            position: relative;
+            @include fonts-variation(nth($base_font_sizes, $theme));
+            
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0px;
+                width: 23px;
+                height: 21px;
+                background: url('../assets/images/sprite-twitter.png') no-repeat;
+                background-position: 0 -277px;
+            }
+        }
+        
+        .tweetdis_click_to_tweet {
+            display: inline-block;
+            font: 16px 'Lato', Arial, sans-serif;
+            font-weight: 900;
+            color: #2aa9e0;
+            margin: 0px 45px;
+            padding-top: 22px;
+            
+            i {
+                background-position: 0 -151px;
+                width: 25px;
+                height: 20px;
+            }
+        }
+    }
+}
+
+
+@mixin theme10 () {
+    $theme : 10;
+    
+    $box : $theme;
+    @if ($theme < 10) {
+        $box : 0#{$box};
+    }
+    @if ($theme >= 12) {
+        $box : #{$box}_at;
+    }
+    
+    &.tweetdis_box_#{$box} {    
+        padding: 21px 0px 20px 0px;
+        background-color: #f5f5f5;
+        box-shadow: #cccccc -1px 1px, #cccccc -2px 2px, #cccccc -3px 3px, #cccccc -4px 4px, #cccccc -5px 5px, #cccccc -6px 6px, #cccccc -7px 7px, #cccccc -8px 8px, #cccccc -9px 9px, #cccccc -10px 10px;
+        
+        &:hover {
+            background-color: #2aa9e0;
+            box-shadow: #1e8ab8 -1px 1px, #1e8ab8 -2px 2px, #1e8ab8 -3px 3px, #1e8ab8 -4px 4px, #1e8ab8 -5px 5px, #1e8ab8 -6px 6px, #1e8ab8 -7px 7px, #1e8ab8 -8px 8px, #1e8ab8 -9px 9px, #1e8ab8 -10px 10px;
+            
+            p,
+            .tweetdis_click_to_tweet {
+                color: #ffffff;
+            }
+            
+            .tweetdis_click_to_tweet i {
+                background-position: 0 -241px;
+            }
+        }
+        
+        p {
+            font: nth($base_font_sizes, $theme) 'Conv_Intro', Arial, sans-serif;
+            line-height: 1.5;
+            padding: 0 28px;
+            @include fonts-variation(nth($base_font_sizes, $theme));
+        }
+        
+        .tweetdis_click_to_tweet {
+            font-family: 'Conv_Intro', Arial, sans-serif;
+            color: #bfbfbf;
+            margin: 0px 28px;
+            padding-top: 12px;
+            
+            i {
+                background-position: 0 -151px;
+                width: 25px;
+                height: 20px;
+            }
+        }
+    }
+}
+
+
+@mixin theme11 () {
+    $theme : 11;
+    
+    $box : $theme;
+    @if ($theme < 10) {
+        $box : 0#{$box};
+    }
+    @if ($theme >= 12) {
+        $box : #{$box}_at;
+    }
+    
+    &.tweetdis_box_#{$box} {    
+        background-color: #e8f6fb;
+        
+        &:hover {
+            background-color: #c2e2ed;
+            
+            .tweetdis_click_to_tweet {
+                background-color: #009ec5;
+            }
+        }
+        
+        p {
+            font: nth($base_font_sizes, $theme) 'Open Sans', Verdana, sans-serif;
+            color: #7898a3;
+            line-height: 1.5;
+            padding: 5% 5% 4% 5%;
+            @include fonts-variation(nth($base_font_sizes, $theme));
+        }
+        
+        .tweetdis_clearfix {
+            display: block;
+            padding: 10px;
+            border-top: 1px solid #dadada;
+            background: #f5f5f5;
+            text-align: right;
+        }
+        
+        .tweetdis_click_to_tweet {
+            display: inline-block;
+            font: 15px 'Open Sans', Verdana, sans-serif;
+            color: #ffffff;
+            padding: 9px 17px;
+            @include border-radius(5px);
+            background-color: #00b9e6;
+            position: relative;
+            
+            i {
+                background-position: 0 -486px;
+                margin-right: 10px;
+            }
+            
+            &:after {
+                content: '';
+                position: absolute;
+                left: -57px;
+                top: -6px;
+                width: 48px;
+                height: 31px;
+                background: url('../assets/images/sprite-twitter.png') 0 0 no-repeat;
+                background-position: 0 -87px;
+            }
+        }
+    }
+}
+
+
+@mixin theme12 () {
+    $theme : 12;
+    
+    $box : $theme;
+    @if ($theme < 10) {
+        $box : 0#{$box};
+    }
+    @if ($theme >= 12) {
+        $box : #{$box}_at;
+    }
+    
+    &.tweetdis_box_#{$box} {    
+        background-color: #f9f9f9;
+        border-left: 2px solid #efefef;
+        border-right: 2px solid #efefef;
+        border-bottom: 2px solid #dadada;
+        border-radius: 10px;
+        
+        &:hover {
+            
+            p {
+                color: #e53935;
+            }
+            
+            .tweetdis_click_to_tweet {
+                color: #e53935;
+                border-color: #e53935;
+                
+                i {
+                    background-position: 0 -472px;
+                }
+            }
+        }
+        
+        p {
+            font: nth($base_font_sizes, $theme) "Montserrat", Arial, sans-serif;
+            color: #272727;
+            padding: 5% 5% 4% 5px;
+            @include fonts-variation(nth($base_font_sizes, $theme));
+        }
+        
+        .tweetdis_author {
+            font-family: "Montserrat", Arial, sans-serif;
+            margin: 22px 0 25px;
+        }
+        
+        .tweetdis_click_to_tweet {
+            font: 16px 'Open Sans', Arial, sans-serif;
+            font-weight: 600;
+            float: right;
+            border: 1px solid #c8e4e5;
+            color: #00b6e6;
+            margin: 20px 0;
+            padding: 8px 10px;
+            border-radius: 20px;
+            @include border-radius(20px);
+
+            
+            i {
+                background-position: 0 -299px;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+
+@mixin theme13 () {
+    $theme : 13;
+    
+    $box : $theme;
+    @if ($theme < 10) {
+        $box : 0#{$box};
+    }
+    @if ($theme >= 12) {
+        $box : #{$box}_at;
+    }
+    
+    &.tweetdis_box_#{$box} {    
+        position: relative;
+        padding: 45px 0 30px;
+        
+        &:before,
+        &:after {
+            content: ''; 
+            position: absolute;
+            left: 106px; 
+            top: 85px;
+            border: 15px solid transparent;
+            border-right-color: #D5D5D5;
+        }
+        
+        &:after {
+            border-right-color: white;
+            left: 111px; 
+        }
+        
+        
+        &:hover {
+            
+            &:before {
+                border-right-color: #38A3D4;
+            }
+            
+            p {
+                color: #2ba3e2;
+                border-color: #38a3d4;
+            }
+        }
+        
+        p {
+            font: nth($base_font_sizes, $theme) "Montserrat", Arial, sans-serif;
+            font-weight: 700;
+            color: #000000;
+            border-left: 5px solid #d5d5d5;
+            padding: 0 5% 0 15px;
+            @include fonts-variation(nth($base_font_sizes, $theme));
+        }
+        
+        .tweetdis_img {
+            padding: 0 20px 5% 15px; 
+        }
+        
+        .tweetdis_author {
+            font-family: "Montserrat", Arial, sans-serif;
+            margin-top: 20px;
+        }
+        
+        .tweetdis_click_to_tweet {
+            font: 16px 'Open Sans', Arial, sans-serif;
+            font-weight: 600;
+            float: right;
+            color: #00b6e6;
+            margin-top: 11px;
+            padding: 9px 9px 0 9px;
+
+            i {
+                background-position: 0 -299px;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+
+@mixin theme14 () {
+    $theme : 14;
+    
+    $box : $theme;
+    @if ($theme < 10) {
+        $box : 0#{$box};
+    }
+    @if ($theme >= 12) {
+        $box : #{$box}_at;
+    }
+    
+    &.tweetdis_box_#{$box} {    
+        background:
+            radial-gradient(circle at 0 100%, transparent 14px, #f1f1f1 15px),
+            radial-gradient(circle at 100% 100%, transparent 14px, #f1f1f1 15px),
+            radial-gradient(circle at 100% 0, transparent 14px, #f1f1f1 15px),
+            radial-gradient(circle at 0 0, transparent 14px, #f1f1f1 15px);
+
+        background-position: bottom left, bottom right, top right, top left;
+        background-size: 51% 51%;
+        background-repeat: no-repeat;
+        
+        &:hover {
+            
+            p,
+            .tweetdis_click_to_tweet {
+                color: #e53935;
+            }
+            
+            .tweetdis_click_to_tweet i {
+                background-position: 0 -472px;
+            }
+        }
+        
+        p {
+            font: nth($base_font_sizes, $theme) 'Playfair Display', Georgia, serif;
+            font-style: italic;
+            padding: 5% 5% 4% 5px;
+            @include fonts-variation(nth($base_font_sizes, $theme));
+        }
+        
+        .tweetdis_author {
+            font: 16px 'Playfair Display', Georgia, serif;
+            font-style: italic;
+            text-transform: uppercase;
+            margin: 22px 0 15px;
+        }
+        
+        .tweetdis_click_to_tweet {
+            font: 16px 'Playfair Display', Georgia, serif;
+            font-style: italic;
+            float: right;
+            color: #00b6e6;
+            margin: 13px 0 15px;
+            padding: 9px;
+
+            i {
+                background-position: 0 -299px;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+
+@mixin theme15 () {
+    $theme : 15;
+    
+    $box : $theme;
+    @if ($theme < 10) {
+        $box : 0#{$box};
+    }
+    @if ($theme >= 12) {
+        $box : #{$box}_at;
+    }
+    
+    &.tweetdis_box_#{$box} {    
+        padding-top: 30px;
+        
+        &:hover {
+            
+            span.tweetdis_wrapper {
+                background-color: yellow;
+                background-clip: content-box;
+            }
+        }
+        
+        p {
+            font: nth($base_font_sizes, $theme) 'Playfair Display', Georgia, serif;
+            font-style: italic;
+            line-height: 1.2;
+            color: #666666;
+            @include fonts-variation(nth($base_font_sizes, $theme));
+            
+            
+            span.tweetdis_wrapper {
+                display: inline-block;
+                position: relative;
+                border-left: 1px solid #ededed;
+                padding: 0 5% 0 30px;
+                
+                &:before {
+                    content: "“";
+                    position: absolute;
+                    left: 2px;
+                    font-size: 50px;
+                    line-height: 1;
+                    color: #bfc1c2;
+                }
+                
+                i {
+                    display: inline-block;
+                    width: 16px;
+                    height: 14px;
+                    background: url('../assets/images/sprite-twitter.png') no-repeat;
+                    background-position: 0 -299px;
+                    margin-left: 10px;
+                }
+            }
+        }
+        
+       .tweetdis_img {
+            padding: 0 3% 5% 5%;
+        }
+        
+        .tweetdis_author {
+            font: 15px 'Open Sans', Arial, sans-serif;
+            font-weight: 700;
+            color: #314046;
+            margin: 22px 0 15px;
+            padding-left: 30px;
+        }
+        
+        .tweetdis_click_to_tweet {
+            display: none;
+        }
+    }
+}
+
+
+@mixin theme16 () {
+    $theme : 16;
+    
+    $box : $theme;
+    @if ($theme < 10) {
+        $box : 0#{$box};
+    }
+    @if ($theme >= 12) {
+        $box : #{$box}_at;
+    }
+    
+    &.tweetdis_box_#{$box} {    
+        
+        background-color: #fefefe;
+        @include border-radius(5px);
+        border: 1px solid #b7b7b7;
+        
+        &:hover {
+            .tweetdis_click_to_tweet {
+                background-color: #009ec5;	
+            }
+        }
+        
+        p {
+            font: nth($base_font_sizes, $theme) 'Lato', Arial, sans-serif;
+            font-style: italic;
+            color: #363636;
+            padding-bottom: 0;
+            @include fonts-variation(nth($base_font_sizes, $theme));
+            
+            span.tweetdis_wrapper {
+                display: inline-block;
+                padding: 3% 3% 3% 2.2em;
+                position: relative;
+                
+                i {
+                    display: block;
+                    float: right;
+                    font: 28px 'Montserrat', Arial, sans-serif;
+                    color: #52c9f2;
+                    margin: 10px 0 0 0;
+                    text-transform: uppercase;
+                }
+                
+                &:before {
+                    content: "“";
+                    position: absolute;
+                    top: 0;
+                    left: 0.1em;
+                    font-size: 3.5em;
+                    font-family: 'Liberation Sans', Arial, sans-serif;
+                    font-weight: 300;
+                    color: #676c6e;
+                }
+            }
+        }
+        
+       .tweetdis_img,
+       .tweetdis_author {
+            display: none;
+        }
+        
+        span.tweetdis_clearfix {
+            display: block;
+            padding: 20px 10px;
+            border-top: 1px solid #b7b7b7;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            background: #f8f8f8;
+            text-align: right;
+            margin-top: 10px;
+        }
+        
+        .tweetdis_click_to_tweet {
+            display: inline-block;
+            font: 15px 'Open Sans', Arial, sans-serif;
+            font-weight: 500;
+            color: #fff;
+            padding: 9px 17px;
+            border-radius: 5px;
+            background-color: #00b9e6;
+            
+            i{
+                display: none;
+            }
+        }
+    }
+}

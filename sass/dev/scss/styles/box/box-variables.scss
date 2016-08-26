@@ -1,0 +1,39 @@
+/* base font sizes for themes 1-16 */
+$base_font_sizes : (30px, 30px, 30px, 24px, 24px, 30px, 30px, 30px, 30px, 24px, 24px, 24px, 24px, 24px, 24px, 28px);
+
+
+/* For color-schemes1 mixin */
+
+/* Params: 3 background-position (normal-hover), border (normal-hover), color (normal-hover) */
+$box_01_settings :  (-402px, -299px, 5px solid #e5e5e5, 5px solid #00b6e6, #cccccc, #00b6e6),
+                    (-416px, -458px, 5px solid #eff1e5, 5px solid #f38630, #b9be9e, #f38630),
+                    (-299px, -472px, 5px solid #9cccec, 5px solid #eb7260, #3a9ad9, #eb7260);
+                    
+
+/* For color-schemes2 mixin */
+                    
+/* Params: 4*2 background-position (normal-hover), background-color (normal-hover), p color (normal-hover), span color (normal-hover) */                    
+$box_02_settings :  (-299px, -299px, none, none, #888888, #666666, #999999, #999999),
+                    (-402px, -486px, #eff1e5, #f38630, #4f504d, #ffffff, #cccccc, #ffffff),
+                    (-402px, -486px, #f7f7f7, #00ccd6, #4f504d, #ffffff, #cccccc, #ffffff);
+
+$box_03_settings :  (-299px, -299px, #f7f7f7, #333333, #333333, #ffffff, #00b6e6, #ffffff),
+                    (-299px, -486px, #e9e0d6, #354458, #333333, #ffffff, #00b6e6, #ffffff),
+                    (-299px, -444px, #efefef, #ffd900, #333333, #333333, #3a9ad9, #333333);
+        
+                    
+/* For color-schemes3 mixin */
+
+/* Params: 5*2 background-position (normal-hover), background-color (normal-hover), border (normal-hover), p color (normal-hover), span color (normal-hover) */
+$box_04_settings :  (-299px, -486px, transparent, #17b8e6, 5px solid #aed4ee, 5px solid #17b8e6, #878787, #878787, #00b6e6, #ffffff),
+                    (-458px, -486px, transparent, #775ba3, 5px solid #fcc4af, 5px solid #775ba3, #878787, #878787, #f98a5f, #ffffff),
+                    (-430px, -486px, transparent, #de5842, 5px solid #fde7ac, 5px solid #de5842, #878787, #de5842, #fcd059, #ffffff);
+     
+                    
+/* For color-schemes4 mixin */
+
+/* Params: 11  background-position (normal-hover), left-bottom-corner-color:before (normal-hover), p background-color (normal-hover), p color (normal-hover), p:before opacity (hover)
+            span background-color (normal-hover) */
+$box_05_settings :  (-299px, -486px, #298ba4, #298ba4, #49c5e6, #dcdcdc, #ffffff, #676767, 0.37, #2fa2c1, #2fa2c1),
+                    (-486px, -486px, #67727a, #b84421, #c3d7df, #f5f5f5, #67727a, #676767, 0.75, #6991ac, #d75c37),
+                    (-486px, -486px, #787147, #437d81, #e2d893, #73afb6, #2b2301, #ffffff, 0.37, #a79e65, #5f9da1);
